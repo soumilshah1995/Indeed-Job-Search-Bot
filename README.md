@@ -46,7 +46,7 @@ except Exception as e:
 jobsearch = IndeedJobSearch(title='Python', location="Bridgeport , CT")
 
 # call method getJobs()
-data  = jobsearch.getJobs(
+data  = jobsearch.getJobs()
 
 # Return Pandas Dataframe 
 print(data)

@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+indeedjobsearch/indeedjobsearch.py
+indeedjobsearch/test.py
+indeedjobsearch.egg-info/PKG-INFO
+indeedjobsearch.egg-info/SOURCES.txt
+indeedjobsearch.egg-info/dependency_links.txt
+indeedjobsearch.egg-info/requires.txt
+indeedjobsearch.egg-info/top_level.txt
