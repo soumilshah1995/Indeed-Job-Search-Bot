@@ -74,7 +74,6 @@ class DataCleaning(object):
 
         soup = BeautifulSoup(self.data, 'html.parser')                  # Creates a soup object
         dt = soup.find('div', class_="pagination")                      # finds the pagination from the text
-
         for x in str(dt).split():                                       # do some processing
 
             if 'data-pp' in x:
@@ -86,8 +85,8 @@ class DataCleaning(object):
                 headers = {'User-Agent': "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36"}
 
                 params = {
-                    'q': 'Python',
-                    'l': 'Bridgeport, CT',
+                    'q': self._title,
+                    'l': self._location,
                     'start':counter,
                     'pp':data[1]
                 }
@@ -103,6 +102,7 @@ class DataCleaning(object):
 
                     title = x.find(class_="title").text.strip()                                                  # Finding the elements
                     self.datastructure.data["title"].append(title)                                              # append data to datastructure
+
 
                     location = x.find(class_="location accessible-contrast-color-location").text.strip()        # find the location
                     self.datastructure.data["location"].append(location)                                        # append to the datastructure
@@ -193,8 +193,9 @@ class IndeedJobSearch(metaclass=Singelton):
 # if __name__ == "__main__":
 #
 #     # Driver code
-#     jobsearch = IndeedJobSearch(title='Python', location="Bridgeport , CT")
-#     data =jobsearch.getJobs()
+#     #jobsearch = IndeedJobSearch(title='Python', location="Bridgeport , CT")
+#     jobsearch = IndeedJobSearch(title='Python', location="Canada")
+#     data = jobsearch.getJobs()
 #     print(data)
 #     # jobsearch.saveExcel()
 
